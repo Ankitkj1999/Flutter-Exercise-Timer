@@ -177,7 +177,7 @@ class Workout {
       _nextStep();
     } else {
       _timeLeft -= Duration(seconds: 1);
-      if (_timeLeft.inSeconds <= 3 && _timeLeft.inSeconds >= 1) {
+      if (_timeLeft.inSeconds <= 1) {
         _playSound(_settings.countdownPip);
       }
     }
@@ -201,6 +201,9 @@ class Workout {
       _startRep();
     } else if (_step == WorkoutState.starting ||
         _step == WorkoutState.breaking) {
+      if (_timeLeft.inSeconds <= 3 || _timeLeft.inSeconds >= 1) {
+        _playSound(_settings.tictic);
+      }
       _startSet();
     }
   }
