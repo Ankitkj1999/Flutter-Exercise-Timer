@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:audioplayers/audio_cache.dart';
+// import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -93,6 +93,7 @@ class Tabata {
   });
 
   Duration getTotalTime() {
+    // var tin = exerciseTime;
     return (exerciseTime * sets * reps) +
         (restTime * sets * (reps - 1)) +
         (breakTime * (sets - 1));
@@ -147,6 +148,7 @@ class Workout {
   start() {
     if (_step == WorkoutState.initial) {
       _step = WorkoutState.starting;
+
       if (_config.startDelay.inSeconds == 0) {
         _nextStep();
       } else {
@@ -160,6 +162,7 @@ class Workout {
   /// Pauses the workout
   pause() {
     _timer.cancel();
+
     _onStateChange();
   }
 
@@ -177,11 +180,10 @@ class Workout {
       _nextStep();
     } else {
       _timeLeft -= Duration(seconds: 1);
-      if (_timeLeft.inSeconds <= 1) {
-        _playSound(_settings.countdownPip);
-      }
     }
-
+    if (_timeLeft.inSeconds <= 3 && _timeLeft.inSeconds >= 0) {
+      _playSound(_settings.startRest);
+    }
     _onStateChange();
   }
 
@@ -201,9 +203,6 @@ class Workout {
       _startRep();
     } else if (_step == WorkoutState.starting ||
         _step == WorkoutState.breaking) {
-      if (_timeLeft.inSeconds <= 3 || _timeLeft.inSeconds >= 1) {
-        _playSound(_settings.tictic);
-      }
       _startSet();
     }
   }
@@ -222,14 +221,15 @@ class Workout {
       return;
     }
     _timeLeft = _config.restTime;
-    _playSound(_settings.startRest);
+    // _playSound(_settings.startRest);
   }
 
   _startRep() {
     _rep++;
     _step = WorkoutState.exercising;
     _timeLeft = _config.exerciseTime;
-    _playSound(_settings.startRep);
+
+    _playSound(_settings.countdownPip);
   }
 
   _startBreak() {
@@ -239,7 +239,7 @@ class Workout {
       return;
     }
     _timeLeft = _config.breakTime;
-    _playSound(_settings.startBreak);
+    // _playSound(_settings.startBreak);
   }
 
   _startSet() {
@@ -247,7 +247,8 @@ class Workout {
     _rep = 1;
     _step = WorkoutState.exercising;
     _timeLeft = _config.exerciseTime;
-    _playSound(_settings.startSet);
+
+    _playSound(_settings.countdownPip);
   }
 
   _finish() {

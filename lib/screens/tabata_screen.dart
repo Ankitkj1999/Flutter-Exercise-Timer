@@ -96,7 +96,7 @@ class _TabataScreenState extends State<TabataScreen> {
                 context: context,
                 builder: (BuildContext context) {
                   return NumberPickerDialog.integer(
-                    minValue: 0,
+                    minValue: 1,
                     maxValue: 100,
                     initialIntegerValue: _tabata.sets,
                     title: Text('Sets in the workout'),
@@ -118,7 +118,7 @@ class _TabataScreenState extends State<TabataScreen> {
                 context: context,
                 builder: (BuildContext context) {
                   return NumberPickerDialog.integer(
-                    minValue: 0,
+                    minValue: 1,
                     maxValue: 100,
                     initialIntegerValue: _tabata.reps,
                     title: Text('Repetitions in each set'),

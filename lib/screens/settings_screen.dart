@@ -123,61 +123,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               );
             },
           ),
-          Divider(height: 10),
-          ListTile(
-            title: Text(
-              'Sounds',
-              style: Theme.of(context).textTheme.subtitle2,
-            ),
-          ),
-          AudioSelectListItem(
-            value: widget.settings.countdownPip,
-            title: 'Countdown pips',
-            onChanged: (String value) {
-              widget.settings.countdownPip = value;
-              widget.onSettingsChanged();
-            },
-          ),
-          AudioSelectListItem(
-            value: widget.settings.startRep,
-            title: 'Start next rep',
-            onChanged: (String value) {
-              widget.settings.startRep = value;
-              widget.onSettingsChanged();
-            },
-          ),
-          AudioSelectListItem(
-            value: widget.settings.startRest,
-            title: 'Rest',
-            onChanged: (String value) {
-              widget.settings.startRest = value;
-              widget.onSettingsChanged();
-            },
-          ),
-          AudioSelectListItem(
-            value: widget.settings.startBreak,
-            title: 'Break',
-            onChanged: (String value) {
-              widget.settings.startBreak = value;
-              widget.onSettingsChanged();
-            },
-          ),
-          AudioSelectListItem(
-            value: widget.settings.startSet,
-            title: 'Start next set',
-            onChanged: (String value) {
-              widget.settings.startSet = value;
-              widget.onSettingsChanged();
-            },
-          ),
-          AudioSelectListItem(
-            value: widget.settings.endWorkout,
-            title: 'End workout (plays twice)',
-            onChanged: (String value) {
-              widget.settings.endWorkout = value;
-              widget.onSettingsChanged();
-            },
-          ),
         ],
       ),
     );
