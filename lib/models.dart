@@ -260,7 +260,7 @@ class Workout {
         return;
       }
       p.onPlayerCompletion.first.then((_) {
-        _playSound(_settings.endWorkout);
+        _playSound(_settings.endWorkout); //playing tada sound at the end
       });
     });
   }
