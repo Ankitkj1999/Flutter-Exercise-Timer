@@ -230,6 +230,7 @@ class Workout {
     _timeLeft = _config.exerciseTime;
 
     _playSound(_settings.countdownPip);
+    _playSound(_settings.tictic);
   }
 
   _startBreak() {
@@ -249,6 +250,7 @@ class Workout {
     _timeLeft = _config.exerciseTime;
 
     _playSound(_settings.countdownPip);
+    _playSound(_settings.tictic);
   }
 
   _finish() {
