@@ -86,52 +86,57 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
       appBar: AppBar(
         title: Text("Timer"),
       ),
-      body: Container(
-        color: _getBackgroundColor(theme),
-        padding: EdgeInsets.symmetric(horizontal: 15),
-        child: Column(
-          children: <Widget>[
-            Expanded(child: Row()),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text(stepName(_workout.step), style: TextStyle(fontSize: 60.0))
-            ]),
-            Divider(height: 32, color: lightTextColor),
-            Container(
-                width: MediaQuery.of(context).size.width,
-                child: FittedBox(child: Text(formatTime(_workout.timeLeft)))),
-            Divider(height: 32, color: lightTextColor),
-            Table(columnWidths: {
-              0: FlexColumnWidth(0.5),
-              1: FlexColumnWidth(0.5),
-              2: FlexColumnWidth(1.0)
-            }, children: [
-              TableRow(children: [
-                TableCell(child: Text('Set', style: TextStyle(fontSize: 30.0))),
-                TableCell(child: Text('Rep', style: TextStyle(fontSize: 30.0))),
-                TableCell(
-                    child: Text('Total Time',
-                        textAlign: TextAlign.end,
-                        style: TextStyle(fontSize: 30.0)))
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          color: _getBackgroundColor(theme),
+          padding: EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            children: <Widget>[
+              Expanded(child: Row()),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Text(stepName(_workout.step), style: TextStyle(fontSize: 60.0))
               ]),
-              TableRow(children: [
-                TableCell(
-                  child:
-                      Text('${_workout.set}', style: TextStyle(fontSize: 60.0)),
-                ),
-                TableCell(
-                  child:
-                      Text('${_workout.rep}', style: TextStyle(fontSize: 60.0)),
-                ),
-                TableCell(
-                    child: Text(
-                  formatTime(_workout.totalTime),
-                  style: TextStyle(fontSize: 60.0),
-                  textAlign: TextAlign.right,
-                ))
+              Divider(height: 32, color: lightTextColor),
+              Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: FittedBox(child: Text(formatTime(_workout.timeLeft)))),
+              Divider(height: 32, color: lightTextColor),
+              Table(columnWidths: {
+                0: FlexColumnWidth(0.5),
+                1: FlexColumnWidth(0.5),
+                2: FlexColumnWidth(1.0)
+              }, children: [
+                TableRow(children: [
+                  TableCell(
+                      child: Text('Set', style: TextStyle(fontSize: 30.0))),
+                  TableCell(
+                      child: Text('Rep', style: TextStyle(fontSize: 30.0))),
+                  TableCell(
+                      child: Text('Total Time',
+                          textAlign: TextAlign.end,
+                          style: TextStyle(fontSize: 30.0)))
+                ]),
+                TableRow(children: [
+                  TableCell(
+                    child: Text('${_workout.set}',
+                        style: TextStyle(fontSize: 60.0)),
+                  ),
+                  TableCell(
+                    child: Text('${_workout.rep}',
+                        style: TextStyle(fontSize: 60.0)),
+                  ),
+                  TableCell(
+                      child: Text(
+                    formatTime(_workout.totalTime),
+                    style: TextStyle(fontSize: 60.0),
+                    textAlign: TextAlign.right,
+                  ))
+                ]),
               ]),
-            ]),
-            Expanded(child: _buildButtonBar()),
-          ],
+              Expanded(child: _buildButtonBar()),
+            ],
+          ),
         ),
       ),
     );
