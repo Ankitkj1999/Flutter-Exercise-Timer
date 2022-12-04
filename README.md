@@ -10,12 +10,12 @@ You can try an online demo here: https://insin.github.io/tabata_timer
 
 | Workout settings | Excercise period | Rest period |
 | ---------------- | ---------------- | ----------- |
-| ![](https://github.com/insin/tabata_timer/blob/master/screenshots/settings.png) | ![](screenshots/workout_exercise.png) | ![](screenshots/workout_rest.png)
+| ![](https://github.com/insin/tabata_timer/blob/master/screenshots/settings.png) | ![](https://github.com/insin/tabata_timer/raw/master/screenshots/workout_exercise.png) | ![](https://github.com/insin/tabata_timer/raw/master/screenshots/workout_rest.png)
 
 | App settings | Light mode theme selection |
 | ------------ | -------------------------- |
-| ![](screenshots/settings.png) | ![](screenshots/light_theme.png) |
+| ![](https://github.com/insin/tabata_timer/raw/master/screenshots/settings.png) | ![](https://github.com/insin/tabata_timer/raw/master/screenshots/light_theme.png) |
 
 | Night mode | Night mode workout |
 | ---------- | ------------------ |
-| ![](screenshots/tabata_config_night.png) | ![](screenshots/workout_night.png) |
+| ![](https://github.com/insin/tabata_timer/raw/master/screenshots/tabata_config_night.png) | ![](https://github.com/insin/tabata_timer/raw/master/screenshots/workout_night.png) |
