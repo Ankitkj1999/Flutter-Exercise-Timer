@@ -1,6 +1,6 @@
 # Exercise Timer
 
-A Tabata training interval timer written with Flutter.
+A exercise training interval timer written with Flutter.
 
 You can try an online demo here: https://gfg-flutter-story.web.app/#/
 
