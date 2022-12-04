@@ -1,16 +1,21 @@
-# time_app
+# Tabata Timer
 
-A new Flutter project.
+A Tabata training interval timer written with Flutter.
 
-## Getting Started
+You can try an online demo here: https://insin.github.io/tabata_timer
 
-This project is a starting point for a Flutter application.
+> **Note:** sound doesn't work in the demo as the audio library the app uses doesn't work on the web
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+| Workout settings | Excercise period | Rest period |
+| ---------------- | ---------------- | ----------- |
+| ![](screenshots/tabata_config.png) | ![](screenshots/workout_exercise.png) | ![](screenshots/workout_rest.png)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| App settings | Light mode theme selection |
+| ------------ | -------------------------- |
+| ![](screenshots/settings.png) | ![](screenshots/light_theme.png) |
+
+| Night mode | Night mode workout |
+| ---------- | ------------------ |
+| ![](screenshots/tabata_config_night.png) | ![](screenshots/workout_night.png) |
