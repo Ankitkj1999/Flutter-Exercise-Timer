@@ -2,7 +2,7 @@
 
 A Tabata training interval timer written with Flutter.
 
-You can try an online demo here: https://insin.github.io/tabata_timer
+You can try an online demo here: https://gfg-flutter-story.web.app/#/
 
 > **Note:** sound doesn't work in the demo as the audio library the app uses doesn't work on the web
 
